@@ -4,17 +4,6 @@ let date = new Date()
 let bar = document.getElementById('liquid')
 // let writing = document.getElementById('letter')
 
-if (localStorage.getItem('nighted') == null) {
-    localStorage.setItem('nighted', true)
-}
-
-if (localStorage.getItem('nighted') == true || !localStorage.getItem('startDate')) {
-    localStorage.setItem('startDate', new Date())
-    localStorage.setItem('nighted', false)
-}
-
-console.log(localStorage.getItem('startDate').getHour())
-
 let countdown = setInterval(() => {
     
     date = new Date()
