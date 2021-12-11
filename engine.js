@@ -1,7 +1,6 @@
 let time = document.getElementById('time')
 
 let date = new Date()
-let startDate
 let bar = document.getElementById('liquid')
 // let writing = document.getElementById('letter')
 
@@ -10,7 +9,7 @@ if (localStorage.getItem('nighted') == null) {
 }
 
 if (localStorage.getItem('nighted') == true || !startDate) {
-    startDate = new Date()
+    localStorage.setItem('startDate', new Date())
     localStorage.setItem('nighted', false)
 }
 
@@ -28,7 +27,7 @@ let countdown = setInterval(() => {
 }, 1000);
 
 function updateBar(date) {
-    let dayhours = 19 - startDate.getHours()
+    let dayhours = 19 - localStorage.getItem('startDate').getHours()
     bar.style.width = (19 - date.getHours()) / dayhours + '%'
 }
 
