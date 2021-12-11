@@ -8,7 +8,7 @@ if (localStorage.getItem('nighted') == null) {
     localStorage.setItem('nighted', true)
 }
 
-if (localStorage.getItem('nighted') == true || !startDate) {
+if (localStorage.getItem('nighted') == true || !localStorage.getItem('startDate')) {
     localStorage.setItem('startDate', new Date())
     localStorage.setItem('nighted', false)
 }
