@@ -16,6 +16,15 @@ if (localStorage.getItem('nighted') == true || !localStorage.getItem('startDate'
 console.log(localStorage.getItem('startDate'))
 
 let countdown = setInterval(() => {
+    
+if (localStorage.getItem('nighted') == null) {
+    localStorage.setItem('nighted', true)
+}
+
+if (localStorage.getItem('nighted') == true || !localStorage.getItem('startDate')) {
+    localStorage.setItem('startDate', new Date())
+    localStorage.setItem('nighted', false)
+}
     date = new Date()
     time.innerHTML = `${(19 - date.getHours()).toString().padStart(2, '0')} ${(59 - date.getMinutes()).toString().padStart(2, '0')}<span class='s'> ${(59 - date.getSeconds()).toString().padStart(2, '0')}</span>`
     if (date.getHours() > 20) {
