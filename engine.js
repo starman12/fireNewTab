@@ -38,7 +38,8 @@ if (localStorage.getItem('nighted') == true || !localStorage.getItem('startDate'
 }, 1000);
 
 function updateBar(date) {
-    let dayhours = 19 - localStorage.getItem('startDate')?.getHours()
+    let sd = localStorage.getItem('startDate')
+    let dayhours = 19 - sd.getHours()
     bar.style.width = (19 - date.getHours()) / dayhours + '%'
 }
 
