@@ -27,7 +27,7 @@ let countdown = setInterval(() => {
 }, 1000);
 
 function updateBar(date) {
-    let dayhours = 19 - localStorage.getItem('startDate').getHours()
+    let dayhours = 19 - localStorage.getItem('startDate')?.getHours()
     bar.style.width = (19 - date.getHours()) / dayhours + '%'
 }
 
