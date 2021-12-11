@@ -66,15 +66,12 @@ html body {
     height: 0.35em;
 }
 
-#time {
-}
-
 .s {
     font-size: 0.5em;
 }
 
 #scale {
-    top:-.12em;
+    top: -0.12em;
     overflow: hidden;
     position: relative;
     box-sizing: border-box;
@@ -82,11 +79,26 @@ html body {
     height: 0.3em;
     outline: solid 0.02em rgba(255, 255, 255, 1);
     outline-offset: -0.015em;
-    background: repeating-linear-gradient(45deg, rgb(121, 101, 84) 0px, rgb(121, 101, 84) 20px, rgb(134, 112, 82) 20px, rgb(134, 112, 82) 40px);
+    background: repeating-linear-gradient(
+        45deg,
+        rgb(121, 101, 84) 0px,
+        rgb(121, 101, 84) 20px,
+        rgb(134, 112, 82) 20px,
+        rgb(134, 112, 82) 40px
+    );
     /* background: linear-gradient(rgb(189, 168, 154), rgb(199, 191, 173) 30%, rgb(189, 168, 154)); */
     border-radius: 1em;
     box-shadow: 0 0em 0.1em rgba(228, 207, 114, 0.993), 0 0em 0.3em rgba(251, 173, 46, 0.993);
     padding: 0.05em;
+}
+
+@keyframes toRight {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 400px;
+    }
 }
 
 #scale::before {
@@ -120,6 +132,7 @@ html body {
 }
 
 #liquid {
+    animation: toRight 3s infinite linear;
     overflow: hidden;
     position: relative;
     height: 100%;
